@@ -8,15 +8,15 @@ Este es un juego de trabajo 3D creado en Godot Engine, en el que los jugadores d
 
 ____----PARTICIPACIÓN----____
 
-[Nombre del Participante 1] VECTOR SAMUEL RÍOS GARCÍA victor.rios0050@alumnos.udg.mx
+-VECTOR SAMUEL RÍOS GARCÍA   victor.rios0050@alumnos.udg.mx
 
-[Nombre del Participante 2] –JAIR RUVALCABAPRIETOjair.ruvalcaba7643@alumnos.udg.mx
+–JAIR RUVALCABA PRIETOj   air.ruvalcaba7643@alumnos.udg.mx
 
-[Nombre del Participante 3] –DIEGO ALEJANDRO ALONSOLOMELIdiego.alonso6675@alumnos.udg.mx
+–DIEGO ALEJANDRO ALONSO LOMELI  diego.alonso6675@alumnos.udg.mx
 
 
 
-____----COMO YUGAR----____
+____----COMO JUGAR----____
 
 Inicio: Al inicio el juego, se te presenta un menú con opciones de inicio, carga y salir.
 
