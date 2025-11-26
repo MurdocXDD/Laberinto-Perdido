@@ -5,18 +5,21 @@ ____----DESCRIPCIÓN----____
 
 Este es un juego de trabajo 3D creado en Godot Engine, en el que los jugadores deben encontrar la salida mientras navegan a viajes de trabajo generado por el sistema. El juego incluye mecánicas de reconocimiento de objetos, detección de enemigos y sistema de HUD para mostrar estadísticas de juego como las monedas reconocidas y las vidas.
 
+____________________________________________________________________________________________________________________________________
+este proyecto fue desarrollado para la clase del Programación 3D cómo proyecto final del Dr. José Luis David Bonilla Carranza
+____________________________________________________________________________________________________________________________________
 
-____----PARTICIPACIÓN----____
+____----DESARROLLADORES----____
 
-[Nombre del Participante 1] VECTOR SAMUEL RÍOS GARCÍA victor.rios0050@alumnos.udg.mx
+-VECTOR SAMUEL RÍOS GARCÍA victor.rios0050@alumnos.udg.mx
 
-[Nombre del Participante 2] –JAIR RUVALCABAPRIETOjair.ruvalcaba7643@alumnos.udg.mx
+–JAIR RUVALCABA PRIETO jair.ruvalcaba7643@alumnos.udg.mx
 
-[Nombre del Participante 3] –DIEGO ALEJANDRO ALONSOLOMELIdiego.alonso6675@alumnos.udg.mx
+–DIEGO ALEJANDRO ALONSO LOMELI diego.alonso6675@alumnos.udg.mx
 
 
 
-____----COMO YUGAR----____
+____----COMO JUGAR----____
 
 Inicio: Al inicio el juego, se te presenta un menú con opciones de inicio, carga y salir.
 
