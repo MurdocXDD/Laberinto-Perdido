@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://77n6iw45vutb"]
+
+[ext_resource type="Script" uid="uid://b23jyfyibh7bv" path="res://enemy_chaser.gd" id="1_fxeuq"]
+[ext_resource type="AudioStream" uid="uid://s55pgd7c3o0e" path="res://dramatic-death-collapse-352720.wav" id="2_4msyp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fxeuq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4msyp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_exobn"]
+size = Vector3(13.162491, 1, 11.134575)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fxeuq"]
+radius = 0.54248047
+height = 2.0993652
+
+[node name="EnemyChaser" type="CharacterBody3D"]
+script = ExtResource("1_fxeuq")
+speed = null
+return_speed = null
+chase_distance = null
+health = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_fxeuq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4msyp")
+debug_color = Color(0.89889395, 0.20209405, 0.60353506, 0.41960785)
+
+[node name="VisionArea" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026898384, 0, -0.12293482)
+shape = SubResource("BoxShape3D_exobn")
+
+[node name="DamageArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009155273, 0)
+shape = SubResource("CapsuleShape3D_fxeuq")
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_4msyp")

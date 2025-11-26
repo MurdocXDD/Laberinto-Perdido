@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs0gx1xyu71ei"]
+
+[ext_resource type="Script" uid="uid://bhqjedxir046v" path="res://game_over.gd" id="1_40baj"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_40baj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1039.0
+offset_bottom = 722.0
+alignment = 1
+
+[node name="GAME OVER" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Reintentar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Reintentar"
+
+[node name="Menu principal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Ir a menu principal"

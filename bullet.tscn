@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c310in8hueuo5"]
+
+[ext_resource type="Script" uid="uid://bo3kwrlx6mv1c" path="res://bullet.gd" id="1_v7oki"]
+[ext_resource type="PackedScene" uid="uid://cgrc1nk1jyvtl" path="res://addons/Ultimate Platformer Pack - Dec 2021/Level and Mechanics/FBX/SpikyBall.fbx" id="2_v8qja"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v8qja"]
+radius = 0.261881
+
+[node name="Bullet" type="Area3D"]
+script = ExtResource("1_v7oki")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_v8qja")
+
+[node name="SpikyBall" parent="." instance=ExtResource("2_v8qja")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

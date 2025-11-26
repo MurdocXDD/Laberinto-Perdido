@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbycob5pk77td"
+path="res://.godot/imported/Stairs_Modular_Start.obj-393cdfa68c1d13a75c887361b15f8bef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stairs_Modular_Start.obj-393cdfa68c1d13a75c887361b15f8bef.mesh"]
+
+source_file="res://addons/Ultimate Platformer Pack - Dec 2021/Level and Mechanics/OBJ/Stairs_Modular_Start.obj"
+dest_files=["res://.godot/imported/Stairs_Modular_Start.obj-393cdfa68c1d13a75c887361b15f8bef.mesh", "res://.godot/imported/Stairs_Modular_Start.obj-393cdfa68c1d13a75c887361b15f8bef.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

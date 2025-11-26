@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bim7h5lhyy8ra"]
+
+[sub_resource type="GDScript" id="GDScript_y2w2y"]
+script/source = "extends CanvasLayer
+
+func _on_reintentar_pressed():
+	get_tree().reload_current_scene()
+
+func _on_salir_pressed():
+	get_tree().change_scene_to_file(\"res://Menus/MenuPrincipal.tscn\")
+"
+
+[node name="VictoryMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_y2w2y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1039.0
+offset_bottom = 722.0
+alignment = 1
+
+[node name="GAME OVER" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Ganaste!"
+horizontal_alignment = 1
+
+[node name="Reintentar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Reintentar"
+
+[node name="Menu principal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Ir a menu principal"

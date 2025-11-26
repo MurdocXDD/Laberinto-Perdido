@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://do65n36wr7xw5"]
+
+[ext_resource type="Script" uid="uid://0ymj8f0ju5eh" path="res://enemy_turret.gd" id="1_p4od2"]
+[ext_resource type="PackedScene" uid="uid://c310in8hueuo5" path="res://bullet.tscn" id="2_dvhuw"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_3u2u1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fcpr"]
+size = Vector3(50, 20, 50)
+
+[node name="EnemyTurret" type="Node3D"]
+script = ExtResource("1_p4od2")
+bullet_scene = ExtResource("2_dvhuw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.771292, 0, 0, 0)
+mesh = SubResource("PrismMesh_3u2u1")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.012207)
+shape = SubResource("BoxShape3D_0fcpr")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.801103)

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b278sg0jbekpi"]
+
+[node name="VictoryMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 249.0
+offset_right = 492.0
+offset_bottom = 272.0
+text = "VICTORIA!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 329.0
+offset_right = 500.0
+offset_bottom = 360.0
+text = "Reintentar"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 382.0
+offset_right = 514.0
+offset_bottom = 413.0
+text = "Salir al menu"

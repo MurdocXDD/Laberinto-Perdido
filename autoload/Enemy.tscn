@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc5cnhiusnupn"]
+
+[ext_resource type="Script" uid="uid://dl2mj0dvky60w" path="res://autoload/enemy.gd" id="1_1e2od"]
+[ext_resource type="AudioStream" uid="uid://s55pgd7c3o0e" path="res://dramatic-death-collapse-352720.wav" id="2_fvuel"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1e2od"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fvuel"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7c4io"]
+radius = 0.539063
+height = 2.05786
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_1e2od")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_1e2od")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fvuel")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00274658, -0.00482178, 0.0104065)
+shape = SubResource("CapsuleShape3D_7c4io")
+debug_color = Color(0.948521, 0.109798, 0.502815, 0.419608)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_fvuel")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

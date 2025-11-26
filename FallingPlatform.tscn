@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://yaq6x1e4f1q7"]
+
+[ext_resource type="Script" uid="uid://de4rou4xa774y" path="res://falling_platform.gd" id="1_xvl4r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xvl4r"]
+size = Vector3(1.9914551, 0.32080078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xvl4r"]
+size = Vector3(2, 0.3, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mctgn"]
+albedo_color = Color(1, 1, 0.4862745, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mctgn"]
+size = Vector3(1.8589478, 0.2902832, 1.8505859)
+
+[node name="FallingPlatform" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_xvl4r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.8513925, -0.009887695, -0.031244516, -0.029711723)
+shape = SubResource("BoxShape3D_xvl4r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_xvl4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_mctgn")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012359619, -0.0040283203, -0.021972656)
+shape = SubResource("BoxShape3D_mctgn")

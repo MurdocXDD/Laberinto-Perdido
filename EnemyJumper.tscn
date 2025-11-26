@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://4spffo2r0vp"]
+
+[ext_resource type="Script" uid="uid://cljetduytm2nf" path="res://enemy_jumper.gd" id="1_nkxhu"]
+[ext_resource type="AudioStream" uid="uid://s55pgd7c3o0e" path="res://dramatic-death-collapse-352720.wav" id="2_w26mn"]
+[ext_resource type="PackedScene" uid="uid://cg5dqfa2n4lus" path="res://Models/Skeleton_Warrior.glb" id="3_8jkff"]
+[ext_resource type="Script" uid="uid://dkt0h4vtjg0tg" path="res://Models/skeleton_warrior.gd" id="4_gwyvd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vv8cc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8jkff"]
+radius = 0.536621
+height = 2.06409
+
+[node name="EnemyJumper" type="CharacterBody3D"]
+script = ExtResource("1_nkxhu")
+
+[node name="Skeleton_Warrior" parent="." instance=ExtResource("3_8jkff")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.724188, 0)
+script = ExtResource("4_gwyvd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vv8cc")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00482178, 0)
+shape = SubResource("CapsuleShape3D_8jkff")
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_w26mn")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

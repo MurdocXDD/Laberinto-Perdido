@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgm2ikybp25jg"
+path="res://.godot/imported/Arrow_Up.obj-ca70a4d6026627e15403f1460a781111.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Arrow_Up.obj-ca70a4d6026627e15403f1460a781111.mesh"]
+
+source_file="res://addons/Ultimate Platformer Pack - Dec 2021/Level and Mechanics/OBJ/Arrow_Up.obj"
+dest_files=["res://.godot/imported/Arrow_Up.obj-ca70a4d6026627e15403f1460a781111.mesh", "res://.godot/imported/Arrow_Up.obj-ca70a4d6026627e15403f1460a781111.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

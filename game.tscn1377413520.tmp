@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvt4747kc5u2t"]
+
+[ext_resource type="Script" uid="uid://bybmqqa8053uc" path="res://game.gd" id="1_1il7v"]
+[ext_resource type="PackedScene" uid="uid://b1ot6gn6tms6h" path="res://lesson_reference/player_3d_template.tscn" id="1_w0p8v"]
+[ext_resource type="Script" uid="uid://31jh56gqo7ov" path="res://lesson_reference/game_manager.gd" id="5_ryrav"]
+[ext_resource type="PackedScene" uid="uid://diojogmqgr0pc" path="res://coin.tscn" id="6_eow3j"]
+[ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://level/level.tscn" id="7_2frud"]
+[ext_resource type="Script" uid="uid://dglmgqrryaq2x" path="res://HUD.gd" id="7_eow3j"]
+[ext_resource type="Script" uid="uid://rednd4n36y7b" path="res://pause_menu.gd" id="8_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://bxg6oejpaitdt" path="res://level/interactable/flag/flag_reached_screen.tscn" id="19_cpgj4"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_1il7v")
+
+[node name="Player3DTemplate" parent="." instance=ExtResource("1_w0p8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43638, 0, -7.8513)
+
+[node name="FlagReachedScreen" parent="." instance=ExtResource("19_cpgj4")]
+
+[node name="Level" parent="." instance=ExtResource("7_2frud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.4)
+
+[node name="GameManager" type="Node3D" parent="."]
+script = ExtResource("5_ryrav")
+
+[node name="Coin" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(0.9999997, 0, 0.0007853981, 0, 1, 0, -0.0007853981, 0, 0.9999997, 4.911051, 3.1654854, 2.4653978)
+
+[node name="Coin2" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.911051, 4.215891, 2.4653978)
+
+[node name="Coin3" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.911051, 5.2092824, 2.4653978)
+
+[node name="Coin4" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.911051, 5.1033773, 9.684122)
+
+[node name="Coin5" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.619154, 6.840621, 9.501314)
+
+[node name="Coin6" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.382096, 7.2373734, 8.478651)
+
+[node name="Coin7" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8519, 9.130287, 11.342962)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("7_eow3j")
+
+[node name="CoinLabel" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Monedas: 0"
+
+[node name="TimerLabel" type="Label" parent="HUD"]
+offset_left = 1.0
+offset_top = 23.0
+offset_right = 102.0
+offset_bottom = 46.0
+text = "Tiempo: 0.0 s"
+
+[node name="Coin8" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.024971, 9.130287, 11.342962)
+
+[node name="Coin9" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.187996, 9.130287, 11.342962)
+
+[node name="Coin10" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.376144, 9.130287, 11.342962)
+
+[node name="Coin11" parent="." groups=["coins"] instance=ExtResource("6_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.817677, 8.668715, 42.40442)
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 1
+script = ExtResource("8_j5wjh")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+offset_right = 1035.0
+offset_bottom = 718.0
+color = Color(0.044309556, 0.044309556, 0.044309556, 0.58431375)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
+offset_right = 1040.0
+offset_bottom = 719.0
+alignment = 1
+
+[node name="Reanudar" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Reanudar
+"
+
+[node name="MenuPrincipal" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Menu principal"
+
+[node name="Salir" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Salir"
+
+[connection signal="collected" from="Coin" to="GameManager" method="_on_coin_collected"]
+[connection signal="collected" from="Coin" to="HUD" method="_on_coin_collected"]

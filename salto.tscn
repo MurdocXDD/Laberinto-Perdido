@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://fnqp8xslcw66"]
+
+[ext_resource type="Script" uid="uid://dkppx8wq48cmc" path="res://salto.gd" id="1_e3c6e"]
+[ext_resource type="PackedScene" uid="uid://ccqq2ps8ccwyb" path="res://Models/HealthPotion.glb" id="2_dcif7"]
+[ext_resource type="AudioStream" uid="uid://cotor8bm648bp" path="res://Preview (mp3cut.net).wav" id="3_08shi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouu17"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_e3c6e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcif7"]
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_e3c6e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999876, 0, -0.0157597, 0, 1, 0, 0.0157597, 0, 0.999876, -0.00186074, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_ouu17")
+mesh = SubResource("BoxMesh_e3c6e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dcif7")
+
+[node name="HealthPotion2" parent="." instance=ExtResource("2_dcif7")]
+transform = Transform3D(2.99965, 0.0458301, -0.00180147, -0.0457464, 2.99804, 0.0983803, 0.00330322, -0.0983413, 2.99839, 0.00527269, -0.596876, 0.174793)
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_08shi")
+volume_db = -0.15
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

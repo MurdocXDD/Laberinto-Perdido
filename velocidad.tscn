@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctl5u2iyu0a35"]
+
+[ext_resource type="Script" uid="uid://dvu0qqm22bjje" path="res://velocidad.gd" id="1_6wgqh"]
+[ext_resource type="PackedScene" uid="uid://dxf2ucgvg8535" path="res://Models/ManaPotion.glb" id="2_73crf"]
+[ext_resource type="AudioStream" uid="uid://cotor8bm648bp" path="res://Preview (mp3cut.net).wav" id="3_fqdcm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4cp7h"]
+albedo_color = Color(0, 0.4, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6wgqh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73crf"]
+
+[node name="Area3D" type="Area3D" groups=["player"]]
+script = ExtResource("1_6wgqh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_4cp7h")
+mesh = SubResource("BoxMesh_6wgqh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.940074, 0, -0.34097, 0, 1, 0, 0.34097, 0, 0.940074, 0.0211463, 0, 0)
+shape = SubResource("BoxShape3D_73crf")
+
+[node name="ManaPotion2" parent="." instance=ExtResource("2_73crf")]
+transform = Transform3D(3, 0, 0, 0, 2.99983, -0.0316248, 0, 0.0316248, 2.99983, 0.0682071, -0.461359, 0.00514728)
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fqdcm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
